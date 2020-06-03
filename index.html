@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>黑心商店招牌產生器</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+
+<body>
+    <div id="app">
+        <canvas id="canvas" width="1890" height="1417"></canvas>
+        <div id="input-field">
+            <div>
+                <h3>1. 上架商品</h3>
+                <input type="file" v-on:change="filesChange(1, $event.target.files)" />
+                <input type="button" v-on:click="rmImg(1)" value="刪除" />
+            </div>
+            <div>
+                <h3>2. 上架商品</h3>
+                <input type="file" v-on:change="filesChange(2, $event.target.files)" />
+                <input type="button" v-on:click="rmImg(2)" value="刪除" />
+            </div>
+            <div>
+                <h3>下載圖片</h3>
+                <input type="button" v-on:click="save()" value="下載" />
+            </div>
+        </div>
+    </div>
+    <script src="script/main.js"></script>
+</body>
+</html>
