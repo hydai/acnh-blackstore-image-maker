@@ -2,34 +2,47 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>黑心商店招牌產生器</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <link rel="stylesheet" href="style/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>黑心商店招牌產生器</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 
 <body>
-    <div id="app">
-        <canvas id="canvas" width="1890" height="1417"></canvas>
-        <div id="input-field">
-            <div>
-                <h3>1. 上架商品</h3>
-                <input type="file" v-on:change="filesChange(1, $event.target.files)" />
-                <input type="button" v-on:click="rmImg(1)" value="刪除" />
-            </div>
-            <div>
-                <h3>2. 上架商品</h3>
-                <input type="file" v-on:change="filesChange(2, $event.target.files)" />
-                <input type="button" v-on:click="rmImg(2)" value="刪除" />
-            </div>
-            <div>
-                <h3>下載圖片</h3>
-                <input type="button" v-on:click="save()" value="下載" />
-            </div>
-        </div>
+  <div id="app" class="container-fluid">
+    <div class="jumbotron">
+      <h1 class="display-4">黑心商店招牌產生器</h1>
+      <hr class="my-4">
+      <p class="lead">選擇圖片，自動縮放進框框，點擊下載就收工囉</p>
     </div>
-    <script src="script/main.js"></script>
+    <div class="row align-items-center">
+      <div class="col-4">
+        <h3>1. 上架商品</h3>
+        <input type="file" class="btn btn-outline-primary btn-lg" v-on:change="filesChange(1, $event.target.files)" />
+        <input type="button" class="btn btn-outline-primary btn-lg" v-on:click="rmImg(1)" value="刪除" />
+      </div>
+      <div class="col-4">
+        <h3>2. 上架商品</h3>
+        <input type="file" class="btn btn-outline-primary btn-lg" v-on:change="filesChange(2, $event.target.files)" />
+        <input type="button" class="btn btn-outline-primary btn-lg" v-on:click="rmImg(2)" value="刪除" />
+      </div>
+      <div class="col-4">
+        <h3>下載圖片</h3>
+        <input type="button" class="btn btn-outline-primary btn-lg" v-on:click="save()" value="下載" />
+      </div>
+    </div>
+    <hr>
+    <div class="row align-items-center">
+      <div class="col-12">
+        <canvas id="canvas" width="1517" height="1134"></canvas>
+      </div>
+    </div>
+  </div>
+  <script src="script/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>
