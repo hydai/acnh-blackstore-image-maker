@@ -15,22 +15,22 @@
     <div class="jumbotron">
       <h1 class="display-4">黑心商店招牌產生器</h1>
       <hr class="my-4">
-      <p class="lead">選擇圖片，自動縮放進框框，點擊下載就收工囉</p>
+      <p class="lead">選擇模式（單/雙），上傳圖片，右鍵下載就收工囉</p>
     </div>
     <div class="row align-items-center">
-      <div class="col-4">
+      <div class="col-3">
+        <h3>0. 模式切換</h3>
+        <input type="button" class="btn btn-outline-primary btn-lg" v-on:click="flipMode()" value="切換" />
+      </div>
+      <div class="col-3">
         <h3>1. 上架商品</h3>
         <input type="file" class="btn btn-outline-primary btn-lg" v-on:change="filesChange(1, $event.target.files)" />
         <input type="button" class="btn btn-outline-primary btn-lg" v-on:click="rmImg(1)" value="刪除" />
       </div>
-      <div class="col-4">
+      <div class="col-3">
         <h3>2. 上架商品</h3>
         <input type="file" class="btn btn-outline-primary btn-lg" v-on:change="filesChange(2, $event.target.files)" />
         <input type="button" class="btn btn-outline-primary btn-lg" v-on:click="rmImg(2)" value="刪除" />
-      </div>
-      <div class="col-4">
-        <h3>下載圖片</h3>
-        <input type="button" class="btn btn-outline-primary btn-lg" v-on:click="save()" value="下載" />
       </div>
     </div>
     <hr>
